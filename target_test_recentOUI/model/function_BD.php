@@ -112,3 +112,34 @@ function getLanguages(){
     $resulat=$request->fetchAll(PDO::FETCH_ASSOC);
     return $resulat;
 }
+/*DEMANDES*/
+function getDemandes(){
+    $connexion=getConnexion();
+    $request=$connexion->prepare("SELECT * FROM `demandes`");
+    $request->execute();
+    $resulat=$request->fetchAll(PDO::FETCH_ASSOC);
+    return $resulat;
+}
+function getDemandesByIdReceiver($id){
+    $connexion=getConnexion();
+    $request=$connexion->prepare("SELECT * FROM `demandes` WHERE `idUserReciver`=:id");
+    $request->bindParam(':id',$id,PDO::PARAM_STR);
+    $request->execute();
+    $resulat=$request->fetchAll(PDO::FETCH_ASSOC);
+    return $resulat;
+}
+function getDemandesByIdAsking($id){
+    $connexion=getConnexion();
+    $request=$connexion->prepare("SELECT * FROM `demandes` WHERE `idUserAsking`=:id");
+    $request->bindParam(':id',$id,PDO::PARAM_STR);
+    $request->execute();
+    $resulat=$request->fetchAll(PDO::FETCH_ASSOC);
+    return $resulat;
+}
+function addDemandes($idAsking,$idReceiver){
+    $connexion=getConnexion();
+    $request=$connexion->prepare("INSERT INTO `demandes`(`idDemandes`, `idUserReciver`, `idUserAsking`,`matching`) VALUES (NULL,:idAsking,:idAsking,FALSE);");
+    $request->bindParam(':idAsking',$idAsking,PDO::PARAM_STR);
+    $request->bindParam(':idReceiver',$idReceiver,PDO::PARAM_STR);
+    $request->execute();
+}
