@@ -93,7 +93,7 @@ public class Connect {
         try{
             Connect(requette);
            
-        }catch(Exeption e){          
+        }catch(Exception e){          
         }
         return ResultToList();
         
