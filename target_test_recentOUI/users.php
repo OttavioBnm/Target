@@ -1,3 +1,17 @@
+<?php
+session_start();
+include 'model/function_BD.php';
+include 'model/functions.php';
+if (isset($_SESSION['pseudo'])) {
+    gotInfos();
+}
+else{
+    header('Location:index.php');
+}
+if($_GET["addId"]){
+    addDemandes($_SESSION['idUser'], $_GET["addId"]);
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -70,12 +84,12 @@
             <tbody>
               <tr>
                 <td><img src="img/logo1.png"></td>
-                <td>Mark</td>
-                <td>Otto</td>
+                <td><?php echo $_SESSION['nom']; ?></td>
+                <td><?php echo $_SESSION['prenom']; ?></td>
                 <td>Petite description du profil</td>
                 <td>
-                    <i class="fa fa-user fa-3x" aria-hidden="true"></i>
-                    <i class="fa fa-heart fa-3x" aria-hidden="true"></i>
+                    <a href="users.php"> <i class="fa fa-user fa-3x" aria-hidden="true"></i></a>
+                    <a href="users.php?addId=<?php echo $_SESSION['idUser']; ?>"><i class="fa fa-heart fa-3x" aria-hidden="true"></i></a>
                 </td>
               </tr>
               <tr>
