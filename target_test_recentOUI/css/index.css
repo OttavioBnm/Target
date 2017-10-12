@@ -1,0 +1,106 @@
+body{
+    background-color: #F1F1F1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+
+.jumbotron {
+    margin-top: 25px;
+    background-color: #F1F1F1;
+}
+
+.footer{
+    margin-top: 50px;
+}
+
+.navbar{
+    background-color: #7EC2FA;
+}
+
+.btn-outline-success{
+    background-color: #FF7777;
+    color: white;
+}
+
+.btn-outline-success:hover
+{
+    background-color: #FF7777;
+    color: black;
+    border-color: white;
+}
+
+.btn-outline-success:focus{
+    box-shadow: none;
+}
+
+.btn-card{
+    background-color: #FF7777;
+    border: none;
+    margin-bottom: 15px;
+}
+
+.btn-card:hover{
+    background-color: #FF7777;
+    color: black;
+    border-color: white;
+}
+
+.btn-card:focus{
+    box-shadow: none;
+}
+
+.card{
+    height: 300px;
+    width: 300px;
+    margin: auto;
+}
+
+.randomCard{
+    height: 350px;
+    width: 350px;
+    margin: auto;
+}
+
+.profil{
+    height: 300px;
+    width: 300px;
+}
+
+.card-profile{
+    margin-top: 100px;
+}
+
+.leformulaire{
+    margin-top: 80px;
+}
+
+.table{
+    margin-top: 20px;
+}
+
+.titre{
+    margin-top: 100px;
+}
+
+.fa-heart{
+    color: #FF7777;
+}
+
+.fa-user{
+    color: #7EC2FA;
+}
+
+.post{
+    margin-top: 100px;
+}
+
+.media-body{
+    margin-left: 20px;
+}
+
+.ya{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}

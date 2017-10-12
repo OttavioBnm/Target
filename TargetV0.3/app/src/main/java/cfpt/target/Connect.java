@@ -19,7 +19,7 @@ public class Connect {
     final String NOM_UTILISATEUR = "jamalalb_admin";
     final String PASSWORD ="roottoor+7-7";
 
-    public void Connect(String requete){
+    private void Connect(String requete){
 
         // Essai de connexion à la base de donnée
         try {
@@ -88,4 +88,15 @@ public class Connect {
             return false;
         }
     }
+    public ArrayList RequeteBD(String requette)
+    {
+        try{
+            Connect(requette);
+           
+        }catch(Exception e){          
+        }
+        return ResultToList();
+        
+    }
+    
 }
